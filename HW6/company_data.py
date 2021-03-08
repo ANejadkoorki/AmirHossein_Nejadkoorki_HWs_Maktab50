@@ -1,28 +1,28 @@
 
 product_list = [
        {
-           "type": "1",
+           "type_of_products": "1",
            "name": "shirt",
            "price": 30,
            "unit": "Dollar",
            "commission_groups": ["A", "B"]
        },
        {
-           "type": "2",
+           "type_of_products": "2",
            "name": "pants",
            "price": 50,
            "unit": "Dollar",
            "commission_groups": ["A", "C"]
        },
        {
-           "type": "3",
+           "type_of_products": "3",
            "name": "shoes",
            "price": 80,
            "unit": "Dollar",
            "commission_groups": ["B"]
        },
        {
-           "type": "4",
+           "type_of_products": "4",
            "name": "hat",
            "price": 20,
            "unit": "Dollar",
