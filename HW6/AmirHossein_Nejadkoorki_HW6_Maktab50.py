@@ -9,7 +9,7 @@ def markup_calculator(type_of_products, count):  # type_of_products is string an
 
     #  form the linear equation
     upper_cost, lower_cost, lower_count = need_items["upper_cost"], need_items["lower_cost"], \
-        need_items["lower_count"]
+                                          need_items["lower_count"]
     #  point1, point2 = (1,upper_cost), (lower_count,lower_cost)
     m = (upper_cost - lower_cost) / (1 - lower_count)
     y_intercept = upper_cost - (m * 1)
