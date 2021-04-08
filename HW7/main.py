@@ -21,5 +21,6 @@ class FinalResult(Discount):
         return f"markup : {self.get_markup()} percent\n" + str(self.get_result())
 
 
-d = FinalResult("1", 15, 1003)
+d = FinalResult("3", 1126, 1006)
 print(d)
+
