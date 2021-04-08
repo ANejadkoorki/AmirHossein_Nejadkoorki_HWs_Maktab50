@@ -34,11 +34,11 @@ class Discount(Markup):
         self.list_of_discount = list()
         for discount in self.discount_list:
             if discount["group_name"] in self.get_commission_groups() and self.userid in discount["users"] and discount[
-                    "unit"] == "percent":
+                "unit"] == "percent":
                 self.list_of_discount.append(self.total_price * (discount["cost"] / 100))
                 continue
             if discount["group_name"] in self.get_commission_groups() and self.userid in discount["users"] and discount[
-                    "unit"] == "Dollar":
+                "unit"] == "Dollar":
                 self.list_of_discount.append((discount["cost"] * self.count))
                 continue
             continue
