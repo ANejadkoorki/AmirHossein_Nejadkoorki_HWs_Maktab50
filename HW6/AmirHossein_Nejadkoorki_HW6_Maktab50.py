@@ -8,13 +8,15 @@ def markup_calculator(type_of_products, count):  # type_of_products is string an
             break
 
     #  form the linear equation
-    upper_cost, lower_cost, lower_count = need_items["upper_cost"], need_items["lower_cost"], \
+    upper_cost, lower_cost, lower_count = need_items["upper_cost"], \
+                                          need_items["lower_cost"], \
                                           need_items["lower_count"]
     #  point1, point2 = (1,upper_cost), (lower_count,lower_cost)
     m = (upper_cost - lower_cost) / (1 - lower_count)
     y_intercept = upper_cost - (m * 1)
 
-    markup = (m * count) + y_intercept if 1 <= count < lower_count else lower_cost
+    markup = (m * count) + y_intercept if 1 <= count < lower_count \
+        else lower_cost
     return markup
 
 
@@ -26,18 +28,21 @@ def total_price_calculator(product_type, count, userid=None):
             answer['product_name'] = i["name"]
         else:
             continue
-        answer['total_price'] = (count * i["price"]) + ((markup / 100) * (count * i["price"]))  # total price
+        answer['total_price'] = (count * i["price"]) + \
+                                ((markup / 100) * (count * i["price"]))  # total price
 
         product_commission_groups = [q for q in i["commission_groups"]]  # commission
         list_of_discount = list()
         for j in discount_list:
-            if j["group_name"] in product_commission_groups and userid in j["users"] and j["unit"] == "percent":
+            if j["group_name"] in product_commission_groups and \
+                    userid in j["users"] and j["unit"] == "percent":
                 list_of_discount.append(answer['total_price'] * (j["cost"] / 100))
                 continue
-            if j["group_name"] in product_commission_groups and userid in j["users"] and j["unit"] == "Dollar":
+            if j["group_name"] in product_commission_groups and \
+                    userid in j["users"] and j["unit"] == "Dollar":
                 list_of_discount.append((j["cost"] * count))
                 continue
-            continue
+            continue  # If none of the above options are done
         if len(list_of_discount) != 0:
             product_finally_discount = min(list_of_discount)
         else:
@@ -47,16 +52,21 @@ def total_price_calculator(product_type, count, userid=None):
         for z in user_list:  # user
             if userid is None:
                 answer['username'] = dict()
-                answer['username']['first_name'] = ''
-                answer['username']['last_name'] = ''
+                answer['username'].update({'first_name': ''})
+                answer['username'].update({'last_name': ''})
                 break
             elif z["userid"] == userid:
                 answer['username'] = dict()
-                answer['username']['first_name'] = z["first_name"]
-                answer['username']['last_name'] = z["last_name"]
+                answer['username'].update({'first_name': z["first_name"]})
+                answer['username'].update({'last_name': z["last_name"]})
                 break
             else:
                 continue
         break
     return answer
+
+
+# print(total_price_calculator("1", 15, 1001))
+print(markup_calculator("1", 5))
+print(total_price_calculator("1", 10, 1002))
 # code by AmirHossein Nejadkoorki
