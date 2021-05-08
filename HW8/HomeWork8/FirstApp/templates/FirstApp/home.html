@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>Selecao</title>
+    <style>
+        #header {
+            font-size: 40pt;
+        }
+
+        #nav_items {
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-xl navbar-dark " style="background-color: rgba(22,32,110,0.99)">
+    <a id="header" class="navbar-brand mb-3 ml-4 h1 bp3-text-large " style="color: white" href="#">Selecao</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul id="nav_items" class="navbar-nav ">
+            <li class="nav-item active">
+                <a class="nav-link " style="color: white" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: white" href="#">Team</a>
+            </li>
+            <li class="nav-item dropdown show">
+                <a class="nav-link dropdown-toggle" style="color: white" role="link" href="#"
+                   id="navbarDropdownMenuLink"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Drop Down
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a id="nav_items" class="dropdown-item" href="#">Drop Down 1</a>
+                    <div class="dropleft">
+                        <a id="nav_items" class="dropdown-toggle" href="#"
+                           data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            Deep Drop Down
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="nav_items">
+                            <a id="nav_items" class="dropdown-item" href="#">Deep Drop Down 1</a>
+                            <a id="nav_items" class="dropdown-item" href="#">Deep Drop Down 2</a>
+                            <a id="nav_items" class="dropdown-item" href="#">Deep Drop Down 3</a>
+                        </div>
+                    </div>
+                    <a id="nav_items" class="dropdown-item" href="#">Drop Down 2</a>
+                    <a id="nav_items" class="dropdown-item" href="#">Drop Down 3</a>
+                    <a id="nav_items" class="dropdown-item" href="#">Drop Down 4</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-5" style="color: white" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div style="background-color: rgba(22,32,110,0.99)">
+    <div class="container ">
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+        <p style="color: rgba(22,32,110,0.99)">s</p>
+    </div>
+</div>
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
