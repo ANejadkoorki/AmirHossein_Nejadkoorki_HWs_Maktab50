@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+{#NAVBAR`S CODE !!!! :#}
 <nav class="navbar navbar-expand-xl navbar-dark " style="background-color: rgba(22,32,110,0.99)">
     <a id="header" class="navbar-brand mb-3 ml-4 h1 bp3-text-large " style="color: white" href="#">Selecao</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -75,22 +76,47 @@
         </ul>
     </div>
 </nav>
-<div style="background-color: rgba(22,32,110,0.99)">
-    <div class="container ">
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
-        <p style="color: rgba(22,32,110,0.99)">s</p>
+{#SLIDE SHOW CODE !!!!! :#}
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="Screenshot (19).png" alt="FirstSlide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 style="font-size: 50pt">ACTIVE POST</h5>
+                <p style="font-size: 40pt">CAPTION!!!!!!!!!!</p>
+            </div>
+        </div>
+        {% for post in slide_show_posts %}
+            <div class="carousel-item ">
+                <img class="d-block w-100" src={{ post.uploads.url }} alt="FirstSlide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 style="font-size: 50pt">{{ post.title }}</h5>
+                    <p style="font-size: 40pt">{{ post.caption }}</p>
+                </div>
+            </div>
+        {% endfor %}
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
+<div style="background-color: rgba(22,32,110,0.99) ; color: white">
+    <h1 class="text-left text-uppercase font-weight-light font-italic">ABOUT</h1>
+
+</div>
+
 
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
