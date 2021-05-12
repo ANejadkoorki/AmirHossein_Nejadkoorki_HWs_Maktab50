@@ -71,7 +71,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-5" style="color: white" href="#">Contact</a>
+                <a class="nav-link mr-5" style="color: white" href="#contact">Contact</a>
             </li>
         </ul>
     </div>
@@ -116,14 +116,14 @@
 <div style="background-color: rgba(22,32,110,0.99) ; color: white">
     {#About code !!!!#}
     <div id="About">
-        <h1 class="text-sm-left text-uppercase font-weight-light font-italic">ABOUT</h1>
+        <h1 class="text-sm-left text-uppercase font-weight-light font-italic">ABOUT Us :</h1>
         {% for post in about_post %}
             <p style="font-size: 20pt" class="text-left text-lowercase font-weight-normal ">{{ post.text }}</p>
         {% endfor %}
     </div>
     {#Services code!!!!!#}
     <div id="Services">
-        <h1 class="text-sm-left text-uppercase font-weight-light font-italic">Our Services</h1>
+        <h1 class="text-sm-left text-uppercase font-weight-light font-italic">Our Services :</h1>
         <div class="container">
             <div class="row mb-2">
                 {% for post in services_post %}
@@ -137,8 +137,34 @@
         </div>
     </div>
     {#contact us code !!!!!!#}
+    <div id="contact">
+    <h1 class="text-sm-left text-uppercase font-weight-light font-italic">Contact Us Here :</h1>
     <div>
-
+        <div class="container">
+            <div class="row mb-2">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Your Name : </label>
+                        <input type="text" id="name" class="form-control" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Your Subject : </label>
+                        <input type="text" id="subject" class="form-control" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email : </label>
+                        <input type="text" id="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message : </label>
+                        <textarea name="message" id="message" class="form-control" cols="80" rows="15"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
 
 </div>
