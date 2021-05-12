@@ -27,13 +27,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul id="nav_items" class="navbar-nav ">
             <li class="nav-item active">
-                <a class="nav-link " style="color: white" href="#">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link " style="color: white" href="{% url 'First-App:home' %}">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color: white" href="#">About</a>
+                <a class="nav-link" style="color: white" href="#About">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color: white" href="#">Services</a>
+                <a class="nav-link" style="color: white" href="#Services">Services</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="color: white" href="#">Portfolio</a>
@@ -112,8 +112,34 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+{#page parts : #}
 <div style="background-color: rgba(22,32,110,0.99) ; color: white">
-    <h1 class="text-left text-uppercase font-weight-light font-italic">ABOUT</h1>
+    {#About code !!!!#}
+    <div id="About">
+        <h1 class="text-sm-left text-uppercase font-weight-light font-italic">ABOUT</h1>
+        {% for post in about_post %}
+            <p style="font-size: 20pt" class="text-left text-lowercase font-weight-normal ">{{ post.text }}</p>
+        {% endfor %}
+    </div>
+    {#Services code!!!!!#}
+    <div id="Services">
+        <h1 class="text-sm-left text-uppercase font-weight-light font-italic">Our Services</h1>
+        <div class="container">
+            <div class="row mb-2">
+                {% for post in services_post %}
+                    <div class="col-md-4">
+                        <h1 style="font-size: 30pt" class=" text-lowercase font-weight-normal ">{{ post.title }}</h1>
+                        <p style="font-size: 20pt" class=" text-lowercase font-weight-normal ">{{ post.content }}</p>
+                        <h6>{{ post.created_date }}</h6>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {#contact us code !!!!!!#}
+    <div>
+
+    </div>
 
 </div>
 
