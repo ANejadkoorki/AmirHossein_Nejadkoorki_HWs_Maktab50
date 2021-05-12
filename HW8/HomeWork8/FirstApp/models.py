@@ -18,3 +18,10 @@ class Services(models.Model):
     created_date = models.DateTimeField(verbose_name="Date of Create", auto_now_add=True)
     title = models.CharField(verbose_name="Title", max_length=100)
     content = models.TextField(verbose_name="Body")
+
+
+class ContactUs(models.Model):
+    name = models.CharField(verbose_name='name', max_length=150)
+    email = models.CharField(verbose_name='email', max_length=300)
+    subject = models.CharField(verbose_name='subject', max_length=1000)
+    message = models.TextField(verbose_name='message')

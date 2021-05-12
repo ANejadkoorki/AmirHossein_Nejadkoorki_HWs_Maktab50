@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from . import models
+from . import models,forms
 
 
 # Create your views here.
@@ -20,3 +20,19 @@ def home_view(request):
                   },
                   template_name="FirstApp/home.html"
                   )
+
+
+def contact_view(request):
+    """
+    saves information of visitor
+    """
+    form_instance = forms.PostForm()
+    if request.method == 'POST':
+        form_instance = forms.PostForm(data=request.POST)
+        if form_instance.is_valid():
+            form_instance.save()
+    return render(
+        request,
+        'blog/Create_post.html',
+        {'post_form': form_instance}
+    )

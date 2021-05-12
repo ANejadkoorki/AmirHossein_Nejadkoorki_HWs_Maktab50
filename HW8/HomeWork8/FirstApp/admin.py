@@ -5,7 +5,8 @@ admin.site.register(
     [
         models.SlideShowPost,
         models.AboutPost,
-        models.Services
+        models.Services,
+        models.ContactUs
     ]
 )
 # Register your models here.
